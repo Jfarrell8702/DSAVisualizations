@@ -516,6 +516,7 @@ function visualizeAlgorithm(type) {
     // Add more algorithms as needed
 }
 
+
 // Stack Visualization
 function visualizeStack(container) {
     const width = container.clientWidth;
@@ -526,27 +527,30 @@ function visualizeStack(container) {
         .attr('height', height);
 
     const data = ["A", "B", "C", "D", "E"];
+    const rectHeight = height / data.length - 10;  // Adjusted height to fit the container
 
     const stackGroup = svg.selectAll('g')
         .data(data)
         .enter()
         .append('g')
-        .attr('transform', (d, i) => `translate(${width / 2 - 50}, ${(height / 2 - (i * 50))})`);
+        .attr('transform', (d, i) => `translate(${width / 2 - 50}, ${(height - (i + 1) * rectHeight - (i * 10))})`);
 
     stackGroup.append('rect')
         .attr('width', 100)
-        .attr('height', 40)
+        .attr('height', rectHeight)
         .attr('fill', '#00ff41')
         .attr('stroke', '#ffffff')
         .attr('stroke-width', 2);
 
     stackGroup.append('text')
         .attr('x', 50)
-        .attr('y', 25)
+        .attr('y', rectHeight / 2)
         .attr('text-anchor', 'middle')
         .attr('fill', '#ffffff')
+        .attr('dy', '0.35em')
         .text(d => d);
 }
+
 
 // Queue Visualization
 function visualizeQueue(container) {
@@ -558,27 +562,30 @@ function visualizeQueue(container) {
         .attr('height', height);
 
     const data = ["A", "B", "C", "D", "E"];
+    const rectWidth = width / data.length - 10;  // Adjusted width to fit the container
 
     const queueGroup = svg.selectAll('g')
         .data(data)
         .enter()
         .append('g')
-        .attr('transform', (d, i) => `translate(${(i * 100) + 50}, ${height / 2})`);
+        .attr('transform', (d, i) => `translate(${i * (rectWidth + 10) + 10}, ${height / 2 - 20})`);
 
     queueGroup.append('rect')
-        .attr('width', 80)
+        .attr('width', rectWidth)
         .attr('height', 40)
         .attr('fill', '#00ff41')
         .attr('stroke', '#ffffff')
         .attr('stroke-width', 2);
 
     queueGroup.append('text')
-        .attr('x', 40)
-        .attr('y', 25)
+        .attr('x', rectWidth / 2)
+        .attr('y', 20)
         .attr('text-anchor', 'middle')
         .attr('fill', '#ffffff')
+        .attr('dy', '0.35em')
         .text(d => d);
 }
+
 
 // Heap Visualization
 function visualizeHeap(container) {
@@ -644,34 +651,30 @@ function visualizeHashTable(container) {
         { key: "D", value: "4" },
         { key: "E", value: "5" }
     ];
+    const rectWidth = width / data.length - 10;  // Adjusted width to fit the container
 
     const hashTableGroup = svg.selectAll('g')
         .data(data)
         .enter()
         .append('g')
-        .attr('transform', (d, i) => `translate(${(i * 150) + 50}, ${height / 2})`);
+        .attr('transform', (d, i) => `translate(${i * (rectWidth + 10) + 10}, ${height / 2 - 20})`);
 
     hashTableGroup.append('rect')
-        .attr('width', 140)
+        .attr('width', rectWidth)
         .attr('height', 40)
         .attr('fill', '#00ff41')
         .attr('stroke', '#ffffff')
         .attr('stroke-width', 2);
 
     hashTableGroup.append('text')
-        .attr('x', 20)
-        .attr('y', 25)
+        .attr('x', rectWidth / 2)
+        .attr('y', 20)
         .attr('text-anchor', 'middle')
         .attr('fill', '#ffffff')
-        .text(d => d.key);
-
-    hashTableGroup.append('text')
-        .attr('x', 100)
-        .attr('y', 25)
-        .attr('text-anchor', 'middle')
-        .attr('fill', '#ffffff')
-        .text(d => d.value);
+        .attr('dy', '0.35em')
+        .text(d => `${d.key}: ${d.value}`);
 }
+
 
 // DFS Visualization
 function visualizeDFS(container) {
@@ -921,3 +924,4 @@ function visualizeDivideAndConquer(container) {
 
     divideAndConquer(data, 0, data.length - 1);
 }
+

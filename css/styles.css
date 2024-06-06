@@ -17,7 +17,27 @@ body {
     min-height: 100vh;
     padding: 20px;
     position: relative;
-    overflow: hidden;
+    overflow-y: scroll;
+    /* Enable vertical scrolling */
+}
+
+/* Custom scrollbar styling */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #00ff41;
+    border-radius: 10px;
+    border: 2px solid #1e1e1e;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #00cc33;
 }
 
 /* Matrix background */
@@ -83,7 +103,9 @@ label {
     color: #00ff41;
 }
 
-select, button, input {
+select,
+button,
+input {
     font-size: 1em;
     padding: 10px;
     width: 100%;
@@ -125,6 +147,15 @@ input {
     position: relative;
     overflow: hidden;
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#placeholder-text {
+    color: #00ff41;
+    font-size: 1.5em;
+    text-align: center;
 }
 
 /* D3.js specific styles */
@@ -143,12 +174,14 @@ circle {
 
 text {
     fill: #ffffff;
-    font-size: 0.8em;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
 rect {
-    fill: #444444;
+    fill: url(#diagonalHatch);
+    stroke: #00ff41;
+    stroke-width: 2;
 }
 
 /* Dijkstra inputs */
