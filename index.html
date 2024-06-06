@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures & Algorithms Visualizer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="matrix-background"></div>
+    <header>
+        <h1>Data Structures & Algorithms Visualizer</h1>
+    </header>
+    <main>
+        <div id="controls">
+            <div>
+                <label for="data-structure-selector">Data Structures:</label>
+                <select id="data-structure-selector">
+                    <option value="bst">Binary Search Tree</option>
+                    <option value="linked-list">Linked List</option>
+                    <option value="graph">Graph</option>
+                </select>
+                <button id="visualize-ds-btn">Visualize Data Structure</button>
+            </div>
+            <div>
+                <label for="algorithm-selector">Algorithms:</label>
+                <select id="algorithm-selector">
+                    <option value="bubble-sort">Bubble Sort</option>
+                    <option value="quick-sort">Quick Sort</option>
+                    <option value="dijkstra">Dijkstra's Algorithm</option>
+                </select>
+                <button id="visualize-alg-btn">Visualize Algorithm</button>
+            </div>
+        </div>
+        <div id="dijkstra-inputs" style="display: none;">
+            <label for="start-node">Start Node:</label>
+            <input type="text" id="start-node" placeholder="e.g., A">
+            <label for="end-node">End Node:</label>
+            <input type="text" id="end-node" placeholder="e.g., E">
+            <button id="run-dijkstra-btn">Run Dijkstra</button>
+        </div>
+        <div id="visualization"></div>
+    </main>
+    <script src="js/main.js"></script>
+    <script src="js/visualizations.js"></script>
+    <script src="js/matrix.js"></script>
+</body>
+</html>

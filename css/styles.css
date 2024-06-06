@@ -1,0 +1,160 @@
+/* Reset default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Matrix background */
+#matrix-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: black;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+}
+
+/* Header styling */
+header {
+    background-color: #1e1e1e;
+    color: #00ff41;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+/* Main content styling */
+main {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Controls styling */
+#controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+#controls div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #00ff41;
+}
+
+select, button, input {
+    font-size: 1em;
+    padding: 10px;
+    width: 100%;
+    max-width: 200px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    outline: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+select {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+button {
+    background-color: #00ff41;
+    color: #1e1e1e;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00cc33;
+}
+
+input {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Visualization container styling */
+#visualization {
+    border: 1px solid #444444;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    height: 500px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* D3.js specific styles */
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+line {
+    stroke: #ffffff;
+}
+
+circle {
+    fill: #00ff41;
+}
+
+text {
+    fill: #ffffff;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+rect {
+    fill: #444444;
+}
+
+/* Dijkstra inputs */
+#dijkstra-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
